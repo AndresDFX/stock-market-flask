@@ -29,7 +29,9 @@ def stock(ticker):
 
 @app.route("/health")
 def health():
-    return jsonify(status="ok", hora=datetime.now().isoformat(timespec="seconds"))
+    """Estado y commit desplegado: Render lo pone en RENDER_GIT_COMMIT; fuera de Render dice «local»."""
+    return jsonify(status="ok", hora=datetime.now().isoformat(timespec="seconds"),
+                   commit=os.getenv("RENDER_GIT_COMMIT", "local")[:7])
 
 
 if __name__ == "__main__":
