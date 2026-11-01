@@ -71,9 +71,9 @@ docker container run --rm --name stock-market -p 5000:5000 stock-market:2.0
 ## 4. Publicación en Docker Hub
 
 ```bash
-docker image tag stock-market:2.0 <usuario>/stock-market:2.0
+docker image tag stock-market:2.0 andresdfx/stock-market:2.0
 docker login
-docker image push <usuario>/stock-market:2.0
+docker image push andresdfx/stock-market:2.0
 ```
 
 ## 5. Despliegue en AWS EC2
@@ -94,8 +94,8 @@ docker image push <usuario>/stock-market:2.0
    - descargar la imagen publicada y ejecutarla.
    ```bash
    sudo usermod -aG docker ubuntu        # y volver a entrar
-   docker image pull <usuario>/stock-market:2.0
-   docker container run -d --name stock-market -p 80:5000 <usuario>/stock-market:2.0
+   docker image pull andresdfx/stock-market:2.0
+   docker container run -d --name stock-market -p 80:5000 andresdfx/stock-market:2.0
    ```
 4. Abrir `http://<DNS público de la instancia>` en el navegador: aparece la tabla.
 5. **Terminar la instancia** (*Instance state → Terminate instance*) para no generar cobros.
