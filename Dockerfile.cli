@@ -1,8 +1,7 @@
-FROM python:3.11-slim
-WORKDIR /work
+FROM python:3.11.3-bullseye
+WORKDIR work
+ENV STOCK 'GOOGL'
 COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 COPY . .
-# Primera parte del taller (stock-market:1.0): el script como comando, sin servidor web
-ENV STOCK=GOOGL
 CMD ["sh", "-c", "python3 read_value_yf.py ${STOCK}"]

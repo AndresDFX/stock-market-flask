@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Segoe UI, Arial, sans-serif" fill="#1d2733">
+  <title>De proceso a servicio de red</title>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d2733"/>
+    </marker>
+    <marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b0081a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+
+  <!-- 1. Un proceso -->
+  <rect x="16" y="16" width="440" height="380" rx="10" fill="#f8f9fb" stroke="#d4d9df"/>
+  <text x="36" y="48" font-size="20" font-weight="700" fill="#b0081a">1. Un proceso</text>
+  <text x="36" y="70" font-size="13" fill="#5b6672">Un programa en ejecución: PID, memoria, CPU, entrada y salida</text>
+  <rect x="36" y="88" width="270" height="226" rx="8" fill="#ffffff" stroke="#8a96a3" stroke-dasharray="5 4"/>
+  <text x="48" y="108" font-size="12" fill="#5b6672">Sistema operativo del equipo</text>
+  <rect x="56" y="122" width="230" height="74" rx="8" fill="#fdf2f3" stroke="#b0081a" stroke-width="1.6"/>
+  <text x="171" y="153" font-size="12.5" text-anchor="middle" font-family="Consolas, monospace">python3 read_value_yf.py</text>
+  <text x="171" y="177" font-size="12" text-anchor="middle" fill="#5b6672">proceso con su PID</text>
+  <line x1="100" y1="246" x2="100" y2="199" stroke="#1d2733" stroke-width="1.5" marker-end="url(#f)"/>
+  <text x="108" y="226" font-size="11.5">argv / STOCK</text>
+  <line x1="246" y1="198" x2="246" y2="245" stroke="#1d2733" stroke-width="1.5" marker-end="url(#f)"/>
+  <text x="240" y="226" font-size="11.5" text-anchor="end">stdout</text>
+  <rect x="56" y="248" width="230" height="52" rx="6" fill="#1f2937"/>
+  <text x="68" y="270" font-size="12" font-family="Consolas, monospace" fill="#e5e7eb">$ python3 read_value_yf.py</text>
+  <text x="68" y="289" font-size="12" font-family="Consolas, monospace" fill="#9ca3af">Price  Adj Close  Close ...</text>
+  <rect x="330" y="130" width="110" height="58" rx="8" fill="#eef3f8" stroke="#8a96a3"/>
+  <text x="385" y="155" font-size="13" font-weight="600" text-anchor="middle">Yahoo</text>
+  <text x="385" y="173" font-size="13" font-weight="600" text-anchor="middle">Finance</text>
+  <line x1="288" y1="159" x2="328" y2="159" stroke="#1d2733" stroke-width="1.5" marker-start="url(#f)" marker-end="url(#f)"/>
+  <text x="385" y="206" font-size="11.5" text-anchor="middle" fill="#5b6672">consultado con yfinance</text>
+  <text x="36" y="342" font-size="13">Arranca, deja la tabla en la terminal y termina.</text>
+  <text x="36" y="362" font-size="13">Solo lo usa quien está en ese equipo, y cada consulta</text>
+  <text x="36" y="382" font-size="13">exige volver a ejecutarlo.</text>
+
+  <!-- transformación -->
+  <line x1="462" y1="206" x2="536" y2="206" stroke="#b0081a" stroke-width="4" marker-end="url(#fr)"/>
+  <text x="500" y="192" font-size="13" font-weight="700" text-anchor="middle" fill="#b0081a">Flask</text>
+  <text x="500" y="228" font-size="11.5" text-anchor="middle">puerto + HTTP</text>
+
+  <!-- 2. Un servicio de red -->
+  <rect x="544" y="16" width="440" height="380" rx="10" fill="#f8f9fb" stroke="#d4d9df"/>
+  <text x="564" y="48" font-size="20" font-weight="700" fill="#b0081a">2. Un servicio de red</text>
+  <text x="564" y="70" font-size="13" fill="#5b6672">El mismo código, pero el proceso escucha en un puerto</text>
+  <rect x="564" y="88" width="270" height="120" rx="8" fill="#ffffff" stroke="#8a96a3" stroke-dasharray="5 4"/>
+  <text x="576" y="108" font-size="12" fill="#5b6672">Contenedor stock-market:2.0</text>
+  <rect x="584" y="118" width="230" height="70" rx="8" fill="#fdf2f3" stroke="#b0081a" stroke-width="1.6"/>
+  <text x="699" y="145" font-size="12.5" text-anchor="middle" font-family="Consolas, monospace">python3 app.py</text>
+  <text x="699" y="167" font-size="12" text-anchor="middle" fill="#5b6672">Flask y read_value_yf.test()</text>
+  <rect x="639" y="178" width="120" height="22" rx="11" fill="#b0081a"/>
+  <text x="699" y="193" font-size="11.5" font-weight="600" text-anchor="middle" fill="#ffffff">socket 0.0.0.0:5000</text>
+  <rect x="858" y="124" width="110" height="58" rx="8" fill="#eef3f8" stroke="#8a96a3"/>
+  <text x="913" y="149" font-size="13" font-weight="600" text-anchor="middle">Yahoo</text>
+  <text x="913" y="167" font-size="13" font-weight="600" text-anchor="middle">Finance</text>
+  <line x1="816" y1="153" x2="856" y2="153" stroke="#1d2733" stroke-width="1.5" marker-start="url(#f)" marker-end="url(#f)"/>
+  <line x1="680" y1="230" x2="680" y2="203" stroke="#1d2733" stroke-width="1.5" marker-end="url(#f)"/>
+  <text x="672" y="224" font-size="11.5" text-anchor="end">petición GET /</text>
+  <line x1="718" y1="202" x2="718" y2="229" stroke="#1d2733" stroke-width="1.5" marker-end="url(#f)"/>
+  <text x="726" y="224" font-size="11.5">respuesta 200 · tabla HTML</text>
+  <ellipse cx="740" cy="254" rx="150" ry="24" fill="#eef3f8" stroke="#8a96a3"/>
+  <text x="740" y="259" font-size="13" font-weight="600" text-anchor="middle">Red · protocolo HTTP</text>
+  <rect x="564" y="308" width="100" height="32" rx="6" fill="#ffffff" stroke="#8a96a3"/>
+  <text x="614" y="329" font-size="12.5" text-anchor="middle">Navegador</text>
+  <rect x="680" y="308" width="100" height="32" rx="6" fill="#ffffff" stroke="#8a96a3"/>
+  <text x="730" y="329" font-size="12.5" text-anchor="middle">curl</text>
+  <rect x="796" y="308" width="120" height="32" rx="6" fill="#ffffff" stroke="#8a96a3"/>
+  <text x="856" y="329" font-size="12.5" text-anchor="middle">Otro programa</text>
+  <line x1="614" y1="306" x2="614" y2="270" stroke="#1d2733" stroke-width="1.5" marker-start="url(#f)" marker-end="url(#f)"/>
+  <line x1="730" y1="306" x2="730" y2="280" stroke="#1d2733" stroke-width="1.5" marker-start="url(#f)" marker-end="url(#f)"/>
+  <line x1="856" y1="306" x2="856" y2="272" stroke="#1d2733" stroke-width="1.5" marker-start="url(#f)" marker-end="url(#f)"/>
+  <text x="564" y="362" font-size="13">No termina: queda vivo esperando peticiones y atiende a</text>
+  <text x="564" y="382" font-size="13">cualquier cliente que conozca su dirección y su puerto.</text>
+
+  <!-- 3. En el taller -->
+  <rect x="16" y="416" width="968" height="208" rx="10" fill="#f8f9fb" stroke="#d4d9df"/>
+  <text x="36" y="448" font-size="20" font-weight="700" fill="#b0081a">3. En el taller: la petición llega al proceso en AWS</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="36" y="472" width="132" height="62" rx="8" fill="#ffffff" stroke="#8a96a3"/>
+    <text x="102" y="498" font-weight="600">Navegador</text>
+    <text x="102" y="518" font-size="11.5" fill="#5b6672">en cualquier lugar</text>
+    <rect x="195" y="472" width="132" height="62" rx="8" fill="#eef3f8" stroke="#8a96a3"/>
+    <text x="261" y="498" font-weight="600">Internet</text>
+    <text x="261" y="518" font-size="11.5" fill="#5b6672">DNS público de EC2</text>
+    <rect x="354" y="472" width="132" height="62" rx="8" fill="#ffffff" stroke="#8a96a3"/>
+    <text x="420" y="498" font-weight="600">EC2 demo_docker</text>
+    <text x="420" y="518" font-size="11.5" fill="#5b6672">HTTP 80 abierto</text>
+    <rect x="514" y="472" width="132" height="62" rx="8" fill="#ffffff" stroke="#8a96a3"/>
+    <text x="580" y="498" font-weight="600">Docker</text>
+    <text x="580" y="518" font-size="11.5" fill="#5b6672" font-family="Consolas, monospace">-p 80:5000</text>
+    <rect x="673" y="472" width="132" height="62" rx="8" fill="#fdf2f3" stroke="#b0081a" stroke-width="1.6"/>
+    <text x="739" y="498" font-weight="600">Contenedor</text>
+    <text x="739" y="518" font-size="11.5" fill="#5b6672">Flask en :5000</text>
+    <rect x="832" y="472" width="132" height="62" rx="8" fill="#eef3f8" stroke="#8a96a3"/>
+    <text x="898" y="498" font-weight="600">Yahoo Finance</text>
+    <text x="898" y="518" font-size="11.5" fill="#5b6672">datos de GOOGL</text>
+  </g>
+  <g stroke="#1d2733" stroke-width="1.5" marker-end="url(#f)">
+    <line x1="170" y1="503" x2="193" y2="503"/>
+    <line x1="329" y1="503" x2="352" y2="503"/>
+    <line x1="488" y1="503" x2="512" y2="503"/>
+    <line x1="648" y1="503" x2="671" y2="503"/>
+    <line x1="807" y1="503" x2="830" y2="503"/>
+  </g>
+  <text x="36" y="568" font-size="13">El grupo de seguridad de AWS deja entrar el tráfico HTTP por el puerto 80 y Docker lo pasa al 5000 del contenedor.</text>
+  <text x="36" y="590" font-size="13">Así, el proceso python3 app.py, que corre aislado en el contenedor, queda accesible desde internet; la respuesta</text>
+  <text x="36" y="612" font-size="13">recorre el mismo camino de vuelta.</text>
+</svg>
